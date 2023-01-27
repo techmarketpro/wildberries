@@ -1,18 +1,17 @@
 {
-    "name": "nik54rus/Wildberries",
-    "description": "",
+    "name": "techmarketpro/wildberries",
+    "description": "WB Api v1.7",
     "keywords": [
         "Wildberries",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://Wildberries.io",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Wildberries and contributors",
-            "homepage": "https://github.com/Wildberries-api/Wildberries-codegen"
+            "name": "Wildberries",
+            "homepage": "https://github.com/techmarketpro/wildberries"
         }
     ],
     "require": {
