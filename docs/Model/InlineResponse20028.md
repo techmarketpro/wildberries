@@ -3,10 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additional_errors** | [****](.md) | Дополнительные ошибки. | [optional] 
-**error** | **bool** | Флаг ошибки. | [optional] 
-**error_text** | **string** | Описание ошибки. | [optional] 
-**data** | [**\Wildberries\Client\Model\InlineResponse20028Data[]**](InlineResponse20028Data.md) |  | [optional] 
+**orders** | [**\Wildberries\Client\Model\Order[]**](Order.md) | Список новых сборочных заданий | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

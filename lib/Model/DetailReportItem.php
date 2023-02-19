@@ -13,12 +13,12 @@
 /**
  * API продавца
  *
- * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul>  ## Поддержка <br> Техническая поддержка осуществляется через обращения в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс.   ## Авторизация Авторизация осуществляется по ключам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что ключ отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный ключ следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> ## Release Notes    #### 2023.01.13 v1.7      Добавлено описание API рекламы  #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / *
+ * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style> <style> .langChange {   text-align: left;   padding: 2px 222px 2px 18px; } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul> <br>  ## Поддержка Техническая поддержка осуществляется через диалоги в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс. <br> <br> <br>  ## Авторизация Авторизация осуществляется по токенам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что токен отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный токен следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru <br> <br> <br> ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> <br> ## Обновления #### 2023.02.14 v1.8    Добавлено описание API рекомендаций #### 2023.01.13 v1.7    Добавлено описание API рекламы #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / * <br> <br>
  *
- * OpenAPI spec version: 1.7
+ * OpenAPI spec version: 1.8
  * 
  * Generated by: https://github.com/Wildberries-api/Wildberries-codegen.git
- * Wildberries Codegen version: 3.0.37
+ * Wildberries Codegen version: 3.0.41
  */
 /**
  * NOTE: This class is auto generated by the Wildberries code generator program.
@@ -110,6 +110,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
 'site_country' => 'string',
 'penalty' => 'float',
 'additional_payment' => 'float',
+'kiz' => 'string',
 'srid' => 'string'    ];
 
     /**
@@ -172,6 +173,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
 'site_country' => null,
 'penalty' => null,
 'additional_payment' => null,
+'kiz' => null,
 'srid' => null    ];
 
     /**
@@ -255,6 +257,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
 'site_country' => 'site_country',
 'penalty' => 'penalty',
 'additional_payment' => 'additional_payment',
+'kiz' => 'kiz',
 'srid' => 'srid'    ];
 
     /**
@@ -317,6 +320,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
 'site_country' => 'setSiteCountry',
 'penalty' => 'setPenalty',
 'additional_payment' => 'setAdditionalPayment',
+'kiz' => 'setKiz',
 'srid' => 'setSrid'    ];
 
     /**
@@ -379,6 +383,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
 'site_country' => 'getSiteCountry',
 'penalty' => 'getPenalty',
 'additional_payment' => 'getAdditionalPayment',
+'kiz' => 'getKiz',
 'srid' => 'getSrid'    ];
 
     /**
@@ -493,6 +498,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
         $this->container['site_country'] = isset($data['site_country']) ? $data['site_country'] : null;
         $this->container['penalty'] = isset($data['penalty']) ? $data['penalty'] : null;
         $this->container['additional_payment'] = isset($data['additional_payment']) ? $data['additional_payment'] : null;
+        $this->container['kiz'] = isset($data['kiz']) ? $data['kiz'] : null;
         $this->container['srid'] = isset($data['srid']) ? $data['srid'] : null;
     }
 
@@ -533,7 +539,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets realizationreport_id
      *
-     * @param int $realizationreport_id Номер отчета
+     * @param int $realizationreport_id Номер отчёта
      *
      * @return $this
      */
@@ -557,7 +563,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets date_from
      *
-     * @param \DateTime $date_from Дата начала отчетного периода <div class=\"version\">С версии 1.0.10</div>
+     * @param \DateTime $date_from Дата начала отчётного периода
      *
      * @return $this
      */
@@ -581,7 +587,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets date_to
      *
-     * @param \DateTime $date_to Дата конца отчетного периода <div class=\"version\">С версии 1.0.10</div>
+     * @param \DateTime $date_to Дата конца отчётного периода
      *
      * @return $this
      */
@@ -773,7 +779,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets sa_name
      *
-     * @param string $sa_name Артикул поставщика
+     * @param string $sa_name Артикул продавца
      *
      * @return $this
      */
@@ -821,7 +827,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets barcode
      *
-     * @param string $barcode Бар-код
+     * @param string $barcode Баркод
      *
      * @return $this
      */
@@ -1037,7 +1043,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets order_dt
      *
-     * @param \DateTime $order_dt Дата заказа. Присылается с явным указанием часового пояса.
+     * @param \DateTime $order_dt Дата заказа. <br> Присылается с явным указанием часового пояса
      *
      * @return $this
      */
@@ -1061,7 +1067,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets sale_dt
      *
-     * @param \DateTime $sale_dt Дата продажи. Присылается с явным указанием часового пояса.
+     * @param \DateTime $sale_dt Дата продажи. <br> Присылается с явным указанием часового пояса
      *
      * @return $this
      */
@@ -1085,7 +1091,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets rr_dt
      *
-     * @param \DateTime $rr_dt Дата операции. Присылается с явным указанием часового пояса.
+     * @param \DateTime $rr_dt Дата операции. <br> Присылается с явным указанием часового пояса
      *
      * @return $this
      */
@@ -1301,7 +1307,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets rid
      *
-     * @param int $rid Уникальный идентификатор позиции заказа
+     * @param int $rid Уникальный идентификатор заказа
      *
      * @return $this
      */
@@ -1469,7 +1475,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets acquiring_fee
      *
-     * @param float $acquiring_fee Возмещение расходов по эквайрингу. <br>Расходы WB на услуги эквайринга: вычитаются из вознаграждения WB и не влияют на доход продавца.
+     * @param float $acquiring_fee Возмещение расходов по эквайрингу. <br>Расходы WB на услуги эквайринга: вычитаются из вознаграждения WB и не влияют на доход продавца
      *
      * @return $this
      */
@@ -1709,7 +1715,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets bonus_type_name
      *
-     * @param string $bonus_type_name Обоснование штрафов и доплат. <br> Поле будет в ответе, если заполнены(о) поля `penalty` или `additional_payment`.
+     * @param string $bonus_type_name Обоснование штрафов и доплат. <br> Поле будет в ответе при наличии значения в поле `penalty` или в поле `additional_payment`
      *
      * @return $this
      */
@@ -1733,7 +1739,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets sticker_id
      *
-     * @param string $sticker_id Цифровое значение стикера, который клеится на товар в процессе сборки заказа по системе Маркетплейс.
+     * @param string $sticker_id Цифровое значение стикера, который клеится на товар в процессе сборки заказа по схеме \"Маркетплейс\"
      *
      * @return $this
      */
@@ -1817,6 +1823,30 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets kiz
+     *
+     * @return string
+     */
+    public function getKiz()
+    {
+        return $this->container['kiz'];
+    }
+
+    /**
+     * Sets kiz
+     *
+     * @param string $kiz Код маркировки. <br> Поле будет в ответе при наличии значения
+     *
+     * @return $this
+     */
+    public function setKiz($kiz)
+    {
+        $this->container['kiz'] = $kiz;
+
+        return $this;
+    }
+
+    /**
      * Gets srid
      *
      * @return string
@@ -1829,7 +1859,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess
     /**
      * Sets srid
      *
-     * @param string $srid Уникальный идентификатор заказа, функционально аналогичный `odid`/`rid`.  Данный параметр введен в июле'22 и в течение переходного периода может быть заполнен не во всех ответах. Примечание для работающих по системе Маркетплейс: `srid` равен `rid` в ответе на метод `GET /api/v2/orders`.
+     * @param string $srid Уникальный идентификатор заказа. Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий.
      *
      * @return $this
      */

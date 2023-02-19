@@ -12,12 +12,12 @@
 /**
  * API продавца
  *
- * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul>  ## Поддержка <br> Техническая поддержка осуществляется через обращения в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс.   ## Авторизация Авторизация осуществляется по ключам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что ключ отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный ключ следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> ## Release Notes    #### 2023.01.13 v1.7      Добавлено описание API рекламы  #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / *
+ * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style> <style> .langChange {   text-align: left;   padding: 2px 222px 2px 18px; } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul> <br>  ## Поддержка Техническая поддержка осуществляется через диалоги в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс. <br> <br> <br>  ## Авторизация Авторизация осуществляется по токенам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что токен отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный токен следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru <br> <br> <br> ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> <br> ## Обновления #### 2023.02.14 v1.8    Добавлено описание API рекомендаций #### 2023.01.13 v1.7    Добавлено описание API рекламы #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / * <br> <br>
  *
- * OpenAPI spec version: 1.7
+ * OpenAPI spec version: 1.8
  * 
  * Generated by: https://github.com/Wildberries-api/Wildberries-codegen.git
- * Wildberries Codegen version: 3.0.37
+ * Wildberries Codegen version: 3.0.41
  */
 /**
  * NOTE: This class is auto generated by the Wildberries code generator program.
@@ -94,7 +94,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20026[]
+     * @return \Wildberries\Client\Model\InlineResponse20020[]
      */
     public function apiV2WarehousesGet()
     {
@@ -110,11 +110,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20026[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20020[], HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2WarehousesGetWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20026[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20020[]';
         $request = $this->apiV2WarehousesGetRequest();
 
         try {
@@ -166,7 +166,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20026[]',
+                        '\Wildberries\Client\Model\InlineResponse20020[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -206,7 +206,7 @@ class Marketplace_Api
      */
     public function apiV2WarehousesGetAsyncWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20026[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20020[]';
         $request = $this->apiV2WarehousesGetRequest();
 
         return $this->client
@@ -339,14 +339,14 @@ class Marketplace_Api
      *
      * Получить информацию по сборочным заданиям
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      * @param  int $date_from Дата начала периода в формате Unix timestamp. Необязательный параметр. (optional)
      * @param  int $date_to Дата конца периода в формате Unix timestamp. Необязательный параметр. (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20036
+     * @return \Wildberries\Client\Model\InlineResponse20027
      */
     public function apiV3OrdersGet($limit, $next, $date_from = null, $date_to = null)
     {
@@ -359,18 +359,18 @@ class Marketplace_Api
      *
      * Получить информацию по сборочным заданиям
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      * @param  int $date_from Дата начала периода в формате Unix timestamp. Необязательный параметр. (optional)
      * @param  int $date_to Дата конца периода в формате Unix timestamp. Необязательный параметр. (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20036, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20027, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersGetWithHttpInfo($limit, $next, $date_from = null, $date_to = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20036';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20027';
         $request = $this->apiV3OrdersGetRequest($limit, $next, $date_from, $date_to);
 
         try {
@@ -422,7 +422,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20036',
+                        '\Wildberries\Client\Model\InlineResponse20027',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -469,8 +469,8 @@ class Marketplace_Api
      *
      * Получить информацию по сборочным заданиям
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      * @param  int $date_from Дата начала периода в формате Unix timestamp. Необязательный параметр. (optional)
      * @param  int $date_to Дата конца периода в формате Unix timestamp. Необязательный параметр. (optional)
      *
@@ -492,8 +492,8 @@ class Marketplace_Api
      *
      * Получить информацию по сборочным заданиям
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      * @param  int $date_from Дата начала периода в формате Unix timestamp. Необязательный параметр. (optional)
      * @param  int $date_to Дата конца периода в формате Unix timestamp. Необязательный параметр. (optional)
      *
@@ -502,7 +502,7 @@ class Marketplace_Api
      */
     public function apiV3OrdersGetAsyncWithHttpInfo($limit, $next, $date_from = null, $date_to = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20036';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20027';
         $request = $this->apiV3OrdersGetRequest($limit, $next, $date_from, $date_to);
 
         return $this->client
@@ -545,8 +545,8 @@ class Marketplace_Api
     /**
      * Create request for operation 'apiV3OrdersGet'
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      * @param  int $date_from Дата начала периода в формате Unix timestamp. Необязательный параметр. (optional)
      * @param  int $date_to Дата конца периода в формате Unix timestamp. Необязательный параметр. (optional)
      *
@@ -670,7 +670,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20037
+     * @return \Wildberries\Client\Model\InlineResponse20028
      */
     public function apiV3OrdersNewGet()
     {
@@ -686,11 +686,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20037, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersNewGetWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20037';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20028';
         $request = $this->apiV3OrdersNewGetRequest();
 
         try {
@@ -742,7 +742,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20037',
+                        '\Wildberries\Client\Model\InlineResponse20028',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -806,7 +806,7 @@ class Marketplace_Api
      */
     public function apiV3OrdersNewGetAsyncWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20037';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20028';
         $request = $this->apiV3OrdersNewGetRequest();
 
         return $this->client
@@ -1507,7 +1507,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20035
+     * @return \Wildberries\Client\Model\InlineResponse20026
      */
     public function apiV3OrdersStatusPost($body = null)
     {
@@ -1524,11 +1524,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20035, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStatusPostWithHttpInfo($body = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20035';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20026';
         $request = $this->apiV3OrdersStatusPostRequest($body);
 
         try {
@@ -1580,7 +1580,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20035',
+                        '\Wildberries\Client\Model\InlineResponse20026',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1654,7 +1654,7 @@ class Marketplace_Api
      */
     public function apiV3OrdersStatusPostAsyncWithHttpInfo($body = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20035';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20026';
         $request = $this->apiV3OrdersStatusPostRequest($body);
 
         return $this->client
@@ -1798,7 +1798,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20038
+     * @return \Wildberries\Client\Model\InlineResponse20029
      */
     public function apiV3OrdersStickersPost($type, $width, $height, $body = null)
     {
@@ -1818,11 +1818,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20038, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3OrdersStickersPostWithHttpInfo($type, $width, $height, $body = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20038';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20029';
         $request = $this->apiV3OrdersStickersPostRequest($type, $width, $height, $body);
 
         try {
@@ -1874,7 +1874,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20038',
+                        '\Wildberries\Client\Model\InlineResponse20029',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1954,7 +1954,7 @@ class Marketplace_Api
      */
     public function apiV3OrdersStickersPostAsyncWithHttpInfo($type, $width, $height, $body = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20038';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20029';
         $request = $this->apiV3OrdersStickersPostRequest($type, $width, $height, $body);
 
         return $this->client
@@ -2125,7 +2125,7 @@ class Marketplace_Api
      * Удалить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody2 $body body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2142,7 +2142,7 @@ class Marketplace_Api
      * Удалить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody2 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2236,7 +2236,7 @@ class Marketplace_Api
      * Удалить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody2 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2257,7 +2257,7 @@ class Marketplace_Api
      * Удалить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody2 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2294,7 +2294,7 @@ class Marketplace_Api
      * Create request for operation 'apiV3StocksWarehouseDelete'
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody2 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2409,11 +2409,11 @@ class Marketplace_Api
      * Получить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody1 $body body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20030
+     * @return \Wildberries\Client\Model\InlineResponse20021
      */
     public function apiV3StocksWarehousePost($body, $warehouse)
     {
@@ -2427,15 +2427,15 @@ class Marketplace_Api
      * Получить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody1 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20030, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3StocksWarehousePostWithHttpInfo($body, $warehouse)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20030';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20021';
         $request = $this->apiV3StocksWarehousePostRequest($body, $warehouse);
 
         try {
@@ -2487,7 +2487,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20030',
+                        '\Wildberries\Client\Model\InlineResponse20021',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2543,7 +2543,7 @@ class Marketplace_Api
      * Получить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody1 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2564,14 +2564,14 @@ class Marketplace_Api
      * Получить остатки товаров
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody1 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function apiV3StocksWarehousePostAsyncWithHttpInfo($body, $warehouse)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20030';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20021';
         $request = $this->apiV3StocksWarehousePostRequest($body, $warehouse);
 
         return $this->client
@@ -2615,7 +2615,7 @@ class Marketplace_Api
      * Create request for operation 'apiV3StocksWarehousePost'
      *
      * @param  \Wildberries\Client\Model\StocksWarehouseBody1 $body (required)
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2729,7 +2729,7 @@ class Marketplace_Api
      *
      * Обновить остатки товаров
      *
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      * @param  \Wildberries\Client\Model\StocksWarehouseBody $body body (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
@@ -2746,7 +2746,7 @@ class Marketplace_Api
      *
      * Обновить остатки товаров
      *
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      * @param  \Wildberries\Client\Model\StocksWarehouseBody $body (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
@@ -2848,7 +2848,7 @@ class Marketplace_Api
      *
      * Обновить остатки товаров
      *
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      * @param  \Wildberries\Client\Model\StocksWarehouseBody $body (optional)
      *
      * @throws \InvalidArgumentException
@@ -2869,7 +2869,7 @@ class Marketplace_Api
      *
      * Обновить остатки товаров
      *
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      * @param  \Wildberries\Client\Model\StocksWarehouseBody $body (optional)
      *
      * @throws \InvalidArgumentException
@@ -2906,7 +2906,7 @@ class Marketplace_Api
     /**
      * Create request for operation 'apiV3StocksWarehousePut'
      *
-     * @param  int $warehouse Идентификатор склада поставщика (required)
+     * @param  int $warehouse Идентификатор склада продавца (required)
      * @param  \Wildberries\Client\Model\StocksWarehouseBody $body (optional)
      *
      * @throws \InvalidArgumentException
@@ -3015,12 +3015,12 @@ class Marketplace_Api
      *
      * Получить список поставок
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20031
+     * @return \Wildberries\Client\Model\InlineResponse20022
      */
     public function apiV3SuppliesGet($limit, $next)
     {
@@ -3033,16 +3033,16 @@ class Marketplace_Api
      *
      * Получить список поставок
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesGetWithHttpInfo($limit, $next)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20031';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20022';
         $request = $this->apiV3SuppliesGetRequest($limit, $next);
 
         try {
@@ -3094,7 +3094,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20031',
+                        '\Wildberries\Client\Model\InlineResponse20022',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3141,8 +3141,8 @@ class Marketplace_Api
      *
      * Получить список поставок
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3162,15 +3162,15 @@ class Marketplace_Api
      *
      * Получить список поставок
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function apiV3SuppliesGetAsyncWithHttpInfo($limit, $next)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20031';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20022';
         $request = $this->apiV3SuppliesGetRequest($limit, $next);
 
         return $this->client
@@ -3213,8 +3213,8 @@ class Marketplace_Api
     /**
      * Create request for operation 'apiV3SuppliesGet'
      *
-     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
-     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. (required)
+     * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных (required)
+     * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3328,7 +3328,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20033
+     * @return \Wildberries\Client\Model\InlineResponse20024
      */
     public function apiV3SuppliesOrdersReshipmentGet()
     {
@@ -3344,11 +3344,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20033, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesOrdersReshipmentGetWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20033';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20024';
         $request = $this->apiV3SuppliesOrdersReshipmentGetRequest();
 
         try {
@@ -3400,7 +3400,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20033',
+                        '\Wildberries\Client\Model\InlineResponse20024',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3464,7 +3464,7 @@ class Marketplace_Api
      */
     public function apiV3SuppliesOrdersReshipmentGetAsyncWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20033';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20024';
         $request = $this->apiV3SuppliesOrdersReshipmentGetRequest();
 
         return $this->client
@@ -3601,7 +3601,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse2011
+     * @return \Wildberries\Client\Model\InlineResponse201
      */
     public function apiV3SuppliesPost($body)
     {
@@ -3618,11 +3618,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse2011, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse201, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesPostWithHttpInfo($body)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse2011';
+        $returnType = '\Wildberries\Client\Model\InlineResponse201';
         $request = $this->apiV3SuppliesPostRequest($body);
 
         try {
@@ -3674,7 +3674,7 @@ class Marketplace_Api
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse2011',
+                        '\Wildberries\Client\Model\InlineResponse201',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3748,7 +3748,7 @@ class Marketplace_Api
      */
     public function apiV3SuppliesPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse2011';
+        $returnType = '\Wildberries\Client\Model\InlineResponse201';
         $request = $this->apiV3SuppliesPostRequest($body);
 
         return $this->client
@@ -3898,7 +3898,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20034
+     * @return \Wildberries\Client\Model\InlineResponse20025
      */
     public function apiV3SuppliesSupplyBarcodeGet($supply, $type, $width, $height)
     {
@@ -3918,11 +3918,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20034, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyBarcodeGetWithHttpInfo($supply, $type, $width, $height)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20034';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20025';
         $request = $this->apiV3SuppliesSupplyBarcodeGetRequest($supply, $type, $width, $height);
 
         try {
@@ -3974,7 +3974,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20034',
+                        '\Wildberries\Client\Model\InlineResponse20025',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4070,7 +4070,7 @@ class Marketplace_Api
      */
     public function apiV3SuppliesSupplyBarcodeGetAsyncWithHttpInfo($supply, $type, $width, $height)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20034';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20025';
         $request = $this->apiV3SuppliesSupplyBarcodeGetRequest($supply, $type, $width, $height);
 
         return $this->client
@@ -5118,7 +5118,7 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20032
+     * @return \Wildberries\Client\Model\InlineResponse20023
      */
     public function apiV3SuppliesSupplyOrdersGet($supply)
     {
@@ -5135,11 +5135,11 @@ class Marketplace_Api
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20032, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3SuppliesSupplyOrdersGetWithHttpInfo($supply)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20032';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20023';
         $request = $this->apiV3SuppliesSupplyOrdersGetRequest($supply);
 
         try {
@@ -5191,7 +5191,7 @@ class Marketplace_Api
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20032',
+                        '\Wildberries\Client\Model\InlineResponse20023',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5273,7 +5273,7 @@ class Marketplace_Api
      */
     public function apiV3SuppliesSupplyOrdersGetAsyncWithHttpInfo($supply)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20032';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20023';
         $request = $this->apiV3SuppliesSupplyOrdersGetRequest($supply);
 
         return $this->client

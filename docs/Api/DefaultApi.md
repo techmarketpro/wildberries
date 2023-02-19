@@ -11,6 +11,9 @@ Method | HTTP request | Description
 [**advV0CpmPost**](DefaultApi.md#advv0cpmpost) | **POST** /adv/v0/cpm | Изменение ставки у РК
 [**advV0PauseGet**](DefaultApi.md#advv0pauseget) | **GET** /adv/v0/pause | Пауза РК
 [**advV0StartGet**](DefaultApi.md#advv0startget) | **GET** /adv/v0/start | Запуск РК
+[**apiV1DelPost**](DefaultApi.md#apiv1delpost) | **POST** /api/v1/del | Удаление рекомендаций
+[**apiV1InsPost**](DefaultApi.md#apiv1inspost) | **POST** /api/v1/ins | Добавление рекомендаций
+[**apiV1SupGet**](DefaultApi.md#apiv1supget) | **GET** /api/v1/sup | Получение списка рекомендаций
 [**apiV1SupplierExciseGoodsGet**](DefaultApi.md#apiv1supplierexcisegoodsget) | **GET** /api/v1/supplier/excise-goods | Отчет по КиЗам
 [**apiV1SupplierIncomesGet**](DefaultApi.md#apiv1supplierincomesget) | **GET** /api/v1/supplier/incomes | Поставки
 [**apiV1SupplierOrdersGet**](DefaultApi.md#apiv1supplierordersget) | **GET** /api/v1/supplier/orders | Заказы
@@ -21,7 +24,7 @@ Method | HTTP request | Description
 [**publicApiV1PricesPost**](DefaultApi.md#publicapiv1pricespost) | **POST** /public/api/v1/prices | Загрузка цен
 
 # **advV0AdvertGet**
-> \Wildberries\Client\Model\InlineResponse20041 advV0AdvertGet($id)
+> \Wildberries\Client\Model\InlineResponse20032 advV0AdvertGet($id)
 
 Информация о РК
 
@@ -61,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20041**](../Model/InlineResponse20041.md)
+[**\Wildberries\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -75,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **advV0AdvertsGet**
-> \Wildberries\Client\Model\InlineResponse20040[] advV0AdvertsGet($status, $type, $limit, $offset, $order, $direction)
+> \Wildberries\Client\Model\InlineResponse20031[] advV0AdvertsGet($status, $type, $limit, $offset, $order, $direction)
 
 Список РК
 
@@ -125,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20040[]**](../Model/InlineResponse20040.md)
+[**\Wildberries\Client\Model\InlineResponse20031[]**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -139,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **advV0CountGet**
-> \Wildberries\Client\Model\InlineResponse20039 advV0CountGet()
+> \Wildberries\Client\Model\InlineResponse20030 advV0CountGet()
 
 Получение РК
 
@@ -175,7 +178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20039**](../Model/InlineResponse20039.md)
+[**\Wildberries\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
 
 ### Authorization
 
@@ -189,11 +192,11 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **advV0CpmGet**
-> \Wildberries\Client\Model\InlineResponse20042[] advV0CpmGet($type, $param)
+> \Wildberries\Client\Model\InlineResponse20033[] advV0CpmGet($type, $param)
 
 Список ставок
 
-Получение списка ставок для типа размещения
+Получение списка ставок для типа размещения. <br>Данные в ответе отсортированы по величине ставки от большей к меньшей.
 
 ### Example
 ```php
@@ -231,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20042[]**](../Model/InlineResponse20042.md)
+[**\Wildberries\Client\Model\InlineResponse20033[]**](../Model/InlineResponse20033.md)
 
 ### Authorization
 
@@ -400,6 +403,166 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiV1DelPost**
+> apiV1DelPost($body)
+
+Удаление рекомендаций
+
+Метод позволяет удалить рекомендации. <br> `ВАЖНО!` Если запрос прошел успешно (код ответа 200), а рекомендации не удалились, то Вам необходимо проверить корректность отправленных значений. На данный момент в методе не предусмотрена валидация значений параметров. Тщательно проверяйте данные перед отправкой
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: HeaderApiKey
+$config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Wildberries\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = array(new \Wildberries\Client\Model\V1DelBody()); // \Wildberries\Client\Model\V1DelBody[] | 
+
+try {
+    $apiInstance->apiV1DelPost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->apiV1DelPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Wildberries\Client\Model\V1DelBody[]**](../Model/V1DelBody.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[HeaderApiKey](../../README.md#HeaderApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiV1InsPost**
+> apiV1InsPost($body)
+
+Добавление рекомендаций
+
+Метод позволяет добавить рекомендации к товару. <br> `ВАЖНО!` Если запрос прошел успешно (код ответа 200), а рекомендации не добавилась, то Вам необходимо проверить корректность отправленных значений. На данный момент в методе не предусмотрена валидация значений параметров. Тщательно проверяйте данные перед отправкой.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: HeaderApiKey
+$config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Wildberries\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = array(new \Wildberries\Client\Model\V1InsBody()); // \Wildberries\Client\Model\V1InsBody[] | 
+
+try {
+    $apiInstance->apiV1InsPost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->apiV1InsPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Wildberries\Client\Model\V1InsBody[]**](../Model/V1InsBody.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[HeaderApiKey](../../README.md#HeaderApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiV1SupGet**
+> int[] apiV1SupGet($nm)
+
+Получение списка рекомендаций
+
+Метод позволяет получить список рекомендаций (\"Магазин рекомендует\") по конкретному товару.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: HeaderApiKey
+$config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Wildberries\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+
+$apiInstance = new Wildberries\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$nm = 56; // int | Идентификатор товара (`nmId`), по которому необходимо получить список рекомендаций.
+
+try {
+    $result = $apiInstance->apiV1SupGet($nm);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->apiV1SupGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nm** | **int**| Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. |
+
+### Return type
+
+**int[]**
+
+### Authorization
+
+[HeaderApiKey](../../README.md#HeaderApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -591,7 +754,7 @@ $apiInstance = new Wildberries\Client\Api\DefaultApi(
 );
 $date_from = "date_from_example"; // string | Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br>Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul>
 $date_to = new \DateTime("2013-10-20"); // \DateTime | Конечная дата отчета
-$limit = 0; // int | Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000.
+$limit = 0; // int | Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000.
 $rrdid = 56; // int | Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  <br> Загрузку отчета нужно начинать с `rrdid = 0` и при последующих вызовах API передавать в запросе значение `rrd_id` из последней строки, полученной в результате предыдущего вызова.  <br> Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю.
 
 try {
@@ -609,7 +772,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date_from** | **string**| Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; |
  **date_to** | **\DateTime**| Конечная дата отчета |
- **limit** | **int**| Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. | [optional] [default to 0]
+ **limit** | **int**| Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. | [optional] [default to 0]
  **rrdid** | **int**| Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. | [optional]
 
 ### Return type

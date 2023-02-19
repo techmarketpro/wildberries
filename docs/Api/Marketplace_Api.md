@@ -25,11 +25,11 @@ Method | HTTP request | Description
 [**apiV3SuppliesSupplyOrdersOrderPatch**](Marketplace_Api.md#apiv3suppliessupplyordersorderpatch) | **PATCH** /api/v3/supplies/{supply}/orders/{order} | Добавить к поставке сборочное задание
 
 # **apiV2WarehousesGet**
-> \Wildberries\Client\Model\InlineResponse20026[] apiV2WarehousesGet()
+> \Wildberries\Client\Model\InlineResponse20020[] apiV2WarehousesGet()
 
 Cписок складов
 
-Cписок складов поставщика.
+Cписок складов продавца.
 
 ### Example
 ```php
@@ -61,7 +61,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20026[]**](../Model/InlineResponse20026.md)
+[**\Wildberries\Client\Model\InlineResponse20020[]**](../Model/InlineResponse20020.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3OrdersGet**
-> \Wildberries\Client\Model\InlineResponse20036 apiV3OrdersGet($limit, $next, $date_from, $date_to)
+> \Wildberries\Client\Model\InlineResponse20027 apiV3OrdersGet($limit, $next, $date_from, $date_to)
 
 Получить информацию по сборочным заданиям
 
@@ -96,8 +96,8 @@ $apiInstance = new Wildberries\Client\Api\Marketplace_Api(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 56; // int | Параметр пагинации. Устанавливает предельное количество возвращаемых данных.
-$next = 789; // int | Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе.
+$limit = 56; // int | Параметр пагинации. Устанавливает предельное количество возвращаемых данных
+$next = 789; // int | Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе
 $date_from = 56; // int | Дата начала периода в формате Unix timestamp. Необязательный параметр.
 $date_to = 56; // int | Дата конца периода в формате Unix timestamp. Необязательный параметр.
 
@@ -114,14 +114,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Параметр пагинации. Устанавливает предельное количество возвращаемых данных. |
- **next** | **int**| Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. |
+ **limit** | **int**| Параметр пагинации. Устанавливает предельное количество возвращаемых данных |
+ **next** | **int**| Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе |
  **date_from** | **int**| Дата начала периода в формате Unix timestamp. Необязательный параметр. | [optional]
  **date_to** | **int**| Дата конца периода в формате Unix timestamp. Необязательный параметр. | [optional]
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20036**](../Model/InlineResponse20036.md)
+[**\Wildberries\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
 
 ### Authorization
 
@@ -135,11 +135,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3OrdersNewGet**
-> \Wildberries\Client\Model\InlineResponse20037 apiV3OrdersNewGet()
+> \Wildberries\Client\Model\InlineResponse20028 apiV3OrdersNewGet()
 
 Получить список новых сборочных заданий
 
-Возвращает список всех новых сборочных заданий у поставщика на данный момент.
+Возвращает список всех новых сборочных заданий у продавца на данный момент.
 
 ### Example
 ```php
@@ -171,7 +171,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20037**](../Model/InlineResponse20037.md)
+[**\Wildberries\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ This endpoint does not need any parameter.
 
 Отменить сборочное задание
 
-Переводит сборочное задание в статус **cancel** (\"Отменено поставщиком\").
+Переводит сборочное задание в статус **cancel** (\"Отменено продавцом\").
 
 ### Example
 ```php
@@ -293,11 +293,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3OrdersStatusPost**
-> \Wildberries\Client\Model\InlineResponse20035 apiV3OrdersStatusPost($body)
+> \Wildberries\Client\Model\InlineResponse20026 apiV3OrdersStatusPost($body)
 
 Получить статусы сборочных заданий
 
-Возвращает статусы сборочных заданий по переданному списку идентификаторов сборочных заданий.  **supplierStatus** - статус сборочного задания, триггером изменения которого является сам поставщик.<br> Возможны следующие значения данного поля: | Статус   | Описание            | Поддерживаемый тип сборочного задания |   Как перевести сборочное задание в данный статус | | -------  | ---------           | ------------------------  | --------------------------------------| | new      | Новое сборочное задание         | dbs / fbs                 |  | confirm  | На сборке            | dbs / fbs                 | Для dbs - **PATCH** *_/api/v3/orders/{order}/confirm* <br> Для fbs - при добавлении сборочного задания к поставке **PATCH** *_/api/v3/supplies/{supply}/orders/{order}* | complete | В доставке           | fbs                       | При переводе в доставку соответствующей поставки **PATCH** *_/api/v3/supplies/{supply}/deliver* | cancel   | Отменено поставщиком | dbs / fbs                 | **PATCH** *_/api/v3/orders/{order}/cancel* | deliver  | В доставке           | dbs                       | **PATCH** *_/api/v3/orders/{order}/deliver* | receive  | Получено клиентом    | dbs                       | **PATCH** *_/api/v3/orders/{order}/receive* | reject   | Отказ при получении  | dbs                       | **PATCH** *_/api/v3/orders/{order}/reject*   **wbStatus** - статус сборочного задания в системе Wildberries.<br> Возможны следующие значения данного поля: - **waiting** - сборочное задание в работе - **sorted** - сборочное задание отсортировано - **sold** - сборочное задание получено клиентом - **canceled** - отмена сборочного задания - **canceled_by_client** - отмена сборочного задания клиентом
+Возвращает статусы сборочных заданий по переданному списку идентификаторов сборочных заданий.  **supplierStatus** - статус сборочного задания, триггером изменения которого является сам продавец.<br> Возможны следующие значения данного поля: | Статус   | Описание            | Как перевести сборочное задание в данный статус | | -------  | ---------           | --------------------------------------| | new      | Новое сборочное задание |           | confirm  | На сборке            | При добавлении сборочного задания к поставке **PATCH** *_/api/v3/supplies/{supply}/orders/{order}* | complete | В доставке           | При переводе в доставку соответствующей поставки **PATCH** *_/api/v3/supplies/{supply}/deliver* | cancel   | Отменено продавцом   | **PATCH** *_/api/v3/orders/{order}/cancel*   **wbStatus** - статус сборочного задания в системе Wildberries.<br> Возможны следующие значения данного поля: - **waiting** - сборочное задание в работе - **sorted** - сборочное задание отсортировано - **sold** - сборочное задание получено покупателем - **canceled** - отмена сборочного задания - **canceled_by_client** - отмена сборочного задания покупателем
 
 ### Example
 ```php
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20035**](../Model/InlineResponse20035.md)
+[**\Wildberries\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
 
 ### Authorization
 
@@ -347,11 +347,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3OrdersStickersPost**
-> \Wildberries\Client\Model\InlineResponse20038 apiV3OrdersStickersPost($type, $width, $height, $body)
+> \Wildberries\Client\Model\InlineResponse20029 apiV3OrdersStickersPost($type, $width, $height, $body)
 
 Получить этикетки для сборочных заданий
 
-Возвращает список этикеток по переданному массиву сборочных заданий. Можно запросить этикетку в формате svg, zplv (вертикальный), zplh (горизонтальный), png.  **Ограничения при работе с методом**: - Нельзя запросить больше 100 этикеток за раз (не более 100 идентификаторов сборочных заданий в запросе). - Метод возвращает этикетки только для сборочных заданий, находящихся на сборке (в статусе **confirm**). - Доступные размеры: 58x40 и 40x30.
+Возвращает список этикеток по переданному массиву сборочных заданий. Можно запросить этикетку в формате svg, zplv (вертикальный), zplh (горизонтальный), png.  **Ограничения при работе с методом**: - Нельзя запросить больше 100 этикеток за раз (не более 100 идентификаторов сборочных заданий в запросе). - Метод возвращает этикетки только для сборочных заданий, находящихся на сборке (в статусе **confirm**). - Доступные размеры: <dd>580x400 пикселей, при параметрах width = 58, height=40</dd> <dd>400x300пикселей, при параметрах width = 40, height=30</dd>
 
 ### Example
 ```php
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20038**](../Model/InlineResponse20038.md)
+[**\Wildberries\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
 
 ### Authorization
 
@@ -429,7 +429,7 @@ $apiInstance = new Wildberries\Client\Api\Marketplace_Api(
     $config
 );
 $body = new \Wildberries\Client\Model\StocksWarehouseBody2(); // \Wildberries\Client\Model\StocksWarehouseBody2 | 
-$warehouse = 56; // int | Идентификатор склада поставщика
+$warehouse = 56; // int | Идентификатор склада продавца
 
 try {
     $apiInstance->apiV3StocksWarehouseDelete($body, $warehouse);
@@ -444,7 +444,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Wildberries\Client\Model\StocksWarehouseBody2**](../Model/StocksWarehouseBody2.md)|  |
- **warehouse** | **int**| Идентификатор склада поставщика |
+ **warehouse** | **int**| Идентификатор склада продавца |
 
 ### Return type
 
@@ -462,7 +462,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3StocksWarehousePost**
-> \Wildberries\Client\Model\InlineResponse20030 apiV3StocksWarehousePost($body, $warehouse)
+> \Wildberries\Client\Model\InlineResponse20021 apiV3StocksWarehousePost($body, $warehouse)
 
 Получить остатки товаров
 
@@ -484,7 +484,7 @@ $apiInstance = new Wildberries\Client\Api\Marketplace_Api(
     $config
 );
 $body = new \Wildberries\Client\Model\StocksWarehouseBody1(); // \Wildberries\Client\Model\StocksWarehouseBody1 | 
-$warehouse = 56; // int | Идентификатор склада поставщика
+$warehouse = 56; // int | Идентификатор склада продавца
 
 try {
     $result = $apiInstance->apiV3StocksWarehousePost($body, $warehouse);
@@ -500,11 +500,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**\Wildberries\Client\Model\StocksWarehouseBody1**](../Model/StocksWarehouseBody1.md)|  |
- **warehouse** | **int**| Идентификатор склада поставщика |
+ **warehouse** | **int**| Идентификатор склада продавца |
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\Wildberries\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ $apiInstance = new Wildberries\Client\Api\Marketplace_Api(
     new GuzzleHttp\Client(),
     $config
 );
-$warehouse = 56; // int | Идентификатор склада поставщика
+$warehouse = 56; // int | Идентификатор склада продавца
 $body = new \Wildberries\Client\Model\StocksWarehouseBody(); // \Wildberries\Client\Model\StocksWarehouseBody | 
 
 try {
@@ -554,7 +554,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **warehouse** | **int**| Идентификатор склада поставщика |
+ **warehouse** | **int**| Идентификатор склада продавца |
  **body** | [**\Wildberries\Client\Model\StocksWarehouseBody**](../Model/StocksWarehouseBody.md)|  | [optional]
 
 ### Return type
@@ -573,7 +573,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3SuppliesGet**
-> \Wildberries\Client\Model\InlineResponse20031 apiV3SuppliesGet($limit, $next)
+> \Wildberries\Client\Model\InlineResponse20022 apiV3SuppliesGet($limit, $next)
 
 Получить список поставок
 
@@ -594,8 +594,8 @@ $apiInstance = new Wildberries\Client\Api\Marketplace_Api(
     new GuzzleHttp\Client(),
     $config
 );
-$limit = 56; // int | Параметр пагинации. Устанавливает предельное количество возвращаемых данных.
-$next = 789; // int | Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе.
+$limit = 56; // int | Параметр пагинации. Устанавливает предельное количество возвращаемых данных
+$next = 789; // int | Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе
 
 try {
     $result = $apiInstance->apiV3SuppliesGet($limit, $next);
@@ -610,12 +610,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **int**| Параметр пагинации. Устанавливает предельное количество возвращаемых данных. |
- **next** | **int**| Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе. |
+ **limit** | **int**| Параметр пагинации. Устанавливает предельное количество возвращаемых данных |
+ **next** | **int**| Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен 0 в первом запросе |
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Wildberries\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
 
 ### Authorization
 
@@ -629,7 +629,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3SuppliesOrdersReshipmentGet**
-> \Wildberries\Client\Model\InlineResponse20033 apiV3SuppliesOrdersReshipmentGet()
+> \Wildberries\Client\Model\InlineResponse20024 apiV3SuppliesOrdersReshipmentGet()
 
 Получить все сборочные задания на повторную отгрузку
 
@@ -665,7 +665,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20033**](../Model/InlineResponse20033.md)
+[**\Wildberries\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -679,11 +679,11 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3SuppliesPost**
-> \Wildberries\Client\Model\InlineResponse2011 apiV3SuppliesPost($body)
+> \Wildberries\Client\Model\InlineResponse201 apiV3SuppliesPost($body)
 
 Создать новую поставку
 
-**Ограничения работы с поставками**:  - Только для сборочных заданий по схеме \"Везу на склад WB\" - При добавлении в поставку все передаваемые сборочные задания в статусе **new** (\"Новое\") будут автоматически переведены в статус **confirm** (\"На сборке\"). - Обратите внимание, что если вы переведёте сборочное задание в статус **cancel** (\"Отмена поставщиком\"), то сборочное задание автоматически удалится из поставки, если было прикреплено к ней. - Поставку можно собрать только из одного типа сборочных заданий: сКГТ (isLargeCargo = true) или обычный (isLargeCargo = false). Новая поставка не обладает сКГТ-признаком. При добавлении первого заказа в поставку она приобретает сКГТ-признак добавляемого товара в заказе.  **Порядок работы**:  1. Создайте новую поставку с помощью метода **POST** *_/api/v3/supplies.* В ответ вернется идентификатор созданной поставки в формате \"WB-GI-1234567\". 2. В текущую новую поставку нужно добавить сборочные задания, которые вы повезёте на склад, методом **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}*. Обратите внимание, что при добавлении сборочных заданий к поставке они будут переведены в статус **confirm** (\"На сборке\"). 3. После добавления сборочных заданий к поставке вы можете получить этикетки с помощью метода **POST** *_/api/v3/orders/stickers*. Обратите внимание, что этикетки для сборочных заданий можно получить только тогда, когда они в статусе **confirm** (\"На сборке\"). 4. После того как поставка будет упомплектована нужными сборочными заданиями, необходимо ее передать в доставку с помощью метода **PATCH** *_/api/v3/supplies/{id поставки}/deliver*. Обратите внимание, что при передаче сборочных заданий в доставку они будут автоматически собраны, т.е. переведены в статус **complete** (\"В доставке\"). 5. Список сборочных заданий, добавленных к поставке, можно получить методом **GET** *_/api/v3/supplies/{id поставки}/orders*. 6. Все поставки, имеющиеся у поставщика, можно получить методом **GET** *_/api/v3/supplies*. 7. Детализацию конкретной поставки можно получить методом **GET** *_/api/v3/supplies/{id поставки}*. 8. С помощью метода **DELETE** *_/api/v3/supplies/{id поставки}* можно удалить поставку при условии, что она активна и за ней не закреплено ни одно сборочное задание. 9. Если поставка была отсканирована в пункте приёмки, но при этом в ней имеются ещё неотсканированные товары, то спустя определенное время необходимо доставить их повторно.   Все сборочные задания, требующие повторной отгрузки на данный момент, можно получить с помощью метода **GET** *_/api/v3/supplies/orders/reshipment*.    При помощи метода **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}* данные сборочные задания можно перевести в другую активную поставку (сборочное задание также будет переведено в статус **confirm** (\"На сборке\")). 10. Метод **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}* также позволяет перемещать сборочные задания между активными поставками. Обратите внимание, что нельзя перемещать сборочное задание из уже закрытой поставки, только если оно не требует повторной отгрузки. 11. QR-код поставки можно получить методом **GET** *_/api/v3/supplies/{id поставки}/barcode* в формате svg, zpl или png. Доступно только после передачи поставки в доставку.
+**Ограничения работы с поставками**:  - Только для сборочных заданий по схеме \"Везу на склад WB\" - При добавлении в поставку все передаваемые сборочные задания в статусе **new** (\"Новое\") будут автоматически переведены в статус **confirm** (\"На сборке\"). - Обратите внимание, что если вы переведёте сборочное задание в статус **cancel** (\"Отмена продавцом\"), то сборочное задание автоматически удалится из поставки, если было прикреплено к ней. - Поставку можно собрать только из одного типа сборочных заданий: сКГТ (isLargeCargo = true) или обычный (isLargeCargo = false). Новая поставка не обладает сКГТ-признаком. При добавлении первого заказа в поставку она приобретает сКГТ-признак добавляемого товара в заказе.  **Порядок работы**:  1. Создайте новую поставку с помощью метода **POST** *_/api/v3/supplies.* В ответ вернется идентификатор созданной поставки в формате \"WB-GI-1234567\". 2. В текущую новую поставку нужно добавить сборочные задания, которые вы повезёте на склад, методом **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}*. Обратите внимание, что при добавлении сборочных заданий к поставке они будут переведены в статус **confirm** (\"На сборке\"). 3. После добавления сборочных заданий к поставке вы можете получить этикетки с помощью метода **POST** *_/api/v3/orders/stickers*. Обратите внимание, что этикетки для сборочных заданий можно получить только тогда, когда они в статусе **confirm** (\"На сборке\"). 4. После того как поставка будет упомплектована нужными сборочными заданиями, необходимо ее передать в доставку с помощью метода **PATCH** *_/api/v3/supplies/{id поставки}/deliver*. Обратите внимание, что при передаче сборочных заданий в доставку они будут автоматически собраны, т.е. переведены в статус **complete** (\"В доставке\"). 5. Список сборочных заданий, добавленных к поставке, можно получить методом **GET** *_/api/v3/supplies/{id поставки}/orders*. 6. Все поставки, имеющиеся у продавца, можно получить методом **GET** *_/api/v3/supplies*. 7. Детализацию конкретной поставки можно получить методом **GET** *_/api/v3/supplies/{id поставки}*. 8. С помощью метода **DELETE** *_/api/v3/supplies/{id поставки}* можно удалить поставку при условии, что она активна и за ней не закреплено ни одно сборочное задание. 9. Если поставка была отсканирована в пункте приёмки, но при этом в ней имеются ещё неотсканированные товары, то спустя определенное время необходимо доставить их повторно.   Все сборочные задания, требующие повторной отгрузки на данный момент, можно получить с помощью метода **GET** *_/api/v3/supplies/orders/reshipment*.    При помощи метода **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}* данные сборочные задания можно перевести в другую активную поставку (сборочное задание также будет переведено в статус **confirm** (\"На сборке\")). 10. Метод **PATCH** *_/api/v3/supplies/{id поставки}/orders/{id сборочного задания}* также позволяет перемещать сборочные задания между активными поставками. Обратите внимание, что нельзя перемещать сборочное задание из уже закрытой поставки, только если оно не требует повторной отгрузки. 11. QR-код поставки можно получить методом **GET** *_/api/v3/supplies/{id поставки}/barcode* в формате svg, zpl или png. Доступно только после передачи поставки в доставку.
 
 ### Example
 ```php
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse2011**](../Model/InlineResponse2011.md)
+[**\Wildberries\Client\Model\InlineResponse201**](../Model/InlineResponse201.md)
 
 ### Authorization
 
@@ -733,11 +733,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3SuppliesSupplyBarcodeGet**
-> \Wildberries\Client\Model\InlineResponse20034 apiV3SuppliesSupplyBarcodeGet($supply, $type, $width, $height)
+> \Wildberries\Client\Model\InlineResponse20025 apiV3SuppliesSupplyBarcodeGet($supply, $type, $width, $height)
 
 Получить QR поставки
 
-Возвращает QR в svg, zplv (вертикальный), zplh (горизонтальный), png. <br> Можно получить, только если поставка передана в доставку. <br> Доступные размеры: 58х40 и 40х30.
+Возвращает QR в svg, zplv (вертикальный), zplh (горизонтальный), png. <br> Можно получить, только если поставка передана в доставку. <dt>Доступные размеры:</dt> <dd>580x400 пикселей, при параметрах width = 58, height=40</dd> <dd>400x300пикселей, при параметрах width = 40, height=30</dd>
 
 ### Example
 ```php
@@ -779,7 +779,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20034**](../Model/InlineResponse20034.md)
+[**\Wildberries\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
 
 ### Authorization
 
@@ -953,7 +953,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiV3SuppliesSupplyOrdersGet**
-> \Wildberries\Client\Model\InlineResponse20032 apiV3SuppliesSupplyOrdersGet($supply)
+> \Wildberries\Client\Model\InlineResponse20023 apiV3SuppliesSupplyOrdersGet($supply)
 
 Получить сборочные задания в поставке
 
@@ -993,7 +993,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Wildberries\Client\Model\InlineResponse20032**](../Model/InlineResponse20032.md)
+[**\Wildberries\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
 
 ### Authorization
 

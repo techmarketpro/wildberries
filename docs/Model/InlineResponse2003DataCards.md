@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **sizes** | [**\Wildberries\Client\Model\InlineResponse2003DataSizes[]**](InlineResponse2003DataSizes.md) | Массив размеров для номенклатуры (для безразмерного товара все равно нужно передавать данный массив с одним элементом и нулевым размером, но с ценой и баркодом) | [optional] 
-**media_files** | **string[]** | Медиафайлы номенклатуры | [optional] 
+**media_files** | **string[]** | Медиафайлы номенклатуры. &lt;br&gt;Фото, URL которого заканчивается на &lt;b&gt;1.jpg&lt;/b&gt; является главным в карточке. | [optional] 
 **colors** | **string[]** | Цвета номенклатуры | [optional] 
 **update_at** | **string** | Дата обновления | [optional] 
 **vendor_code** | **string** | Текстовый идентификатор НМ поставщика | [optional] 

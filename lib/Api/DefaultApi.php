@@ -12,12 +12,12 @@
 /**
  * API продавца
  *
- * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul>  ## Поддержка <br> Техническая поддержка осуществляется через обращения в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс.   ## Авторизация Авторизация осуществляется по ключам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что ключ отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный ключ следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> ## Release Notes    #### 2023.01.13 v1.7      Добавлено описание API рекламы  #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / *
+ * # Общее описание <style> .version {   border: 0.1rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #32329FE6;   height: 25px;   width: 150px;   text-align: center }, </style> <style> .warning {   border: 1.6rem #b3b3b3 solid;   background-color: #F9F9F9;   color: #247706;   text-align: center } </style> <style> .langChange {   text-align: left;   padding: 2px 222px 2px 18px; } </style>  Wildberries API предоставляет продавцам возможность управления магазином и получения оперативной и статистической информации по протоколу HTTP RestAPI. <br> Описание API предоставляется в формате [Wildberries](https://Wildberries.io/) (Open API) и может быть использовано для импорта в другие инструменты (такие как PostMan) или генерации клиентского кода на различных языках программирования с помощью [Wildberries CodeGen](https://Wildberries.io/tools/Wildberries-codegen/)  <ul> <li> Описание в оригинальном Wildberries-формате <a href=\"/Wildberries\">Wildberries</a> <li> OpenAPI-файл <a href=\"/Wildberries.yaml\">Wildberries.yaml</a> </ul>  <br> Для ручной проверки API вы можете использовать: <ul> <li> Под ОС Windows - [PostMan](https://www.postman.com/) <li> Под ОС Linux - [curl](https://curl.se/)  </ul> <br>  ## Поддержка Техническая поддержка осуществляется через диалоги в личном кабинете продавца. При создании нового обращения в техподдержку используйте категорию API. <br> Новости и изменения, касающиеся API, публикуются в [новостной ленте Wildberries](https://seller.wildberries.ru/news). <br> Также готовятся к публикации Release Notes по API на сайте.  После их выхода будет сделан соответствующий анонс. <br> <br> <br>  ## Авторизация Авторизация осуществляется по токенам API, которые  владелец личного кабинета (главный пользователь) самостоятельно  генерирует в разделе   [Профиль --> Настройки --> Доступ к новому API](https://seller.wildberries.ru/supplier-settings/access-to-new-api). <br>Обратите внимание, что токен отображается ТОЛЬКО в момент создания. Его надо сохранить, потому что больше его отобразить будет нельзя. <br>Созданный токен следует добавлять в каждый запрос, прибавляя к запросу заголовок (http-header) формата `Authorization: .........`. <br> <br>Внимание! Изменился домен для методов статистики, актуальный: https://statistics-api.wildberries.ru <br> <br> <br> ## Форматы ### Дата и время Во всех методах API статистики дата и время передаются в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).  <br> В большинстве случаев вы можете передать дату или дату со временем. Если время не указано, оно принимается равным 00:00:00. Время можно указывать с точностью до секунд или миллисекунд.  Литера `Z` в конце строки означает часовой пояс UTC. При ее отсутствии время считается в часовом поясе МСК (UTC+3). <br> Примеры: <ul> <li> `2019-06-20` <li> `2019-06-20T00:00:00Z` <li> `2019-06-20T23:59:59` <li> `2019-06-20T00:00:00.12345Z` <li> `2019-06-20T00:00:00.12345` <li> `2017-03-25T00:00:00` </ul> <br> ## Обновления #### 2023.02.14 v1.8    Добавлено описание API рекомендаций #### 2023.01.13 v1.7    Добавлено описание API рекламы #### 2022.12.21 v1.6 Добавлена инструкция по загрузке статистики в Excel #### 2022.12.15 v1.5  Новая авторизация для методов API статистики 2022.12.15 в v1.5: #### 2022.10.31 v1.4  Метод будет отключен 2022.10.31 в v1.4: <ul> <li> `/content/v1/cards/list` </ul>  #### 2022.09.20 v1.2  В связи с переходом на новое API Контента старые методы будут отключены. К их числу относятся: <ul> <li> `/card/_*` <li> `/api/v1/config/_*` <li> `/api/v1/directory/_*` </ul> Данные методы теперь возвращают код 404.  Новое API Контента описано в данном документе в разделах Контент / * <br> <br>
  *
- * OpenAPI spec version: 1.7
+ * OpenAPI spec version: 1.8
  * 
  * Generated by: https://github.com/Wildberries-api/Wildberries-codegen.git
- * Wildberries Codegen version: 3.0.37
+ * Wildberries Codegen version: 3.0.41
  */
 /**
  * NOTE: This class is auto generated by the Wildberries code generator program.
@@ -95,7 +95,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20041
+     * @return \Wildberries\Client\Model\InlineResponse20032
      */
     public function advV0AdvertGet($id)
     {
@@ -112,11 +112,11 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20041, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20032, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0AdvertGetWithHttpInfo($id)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20041';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20032';
         $request = $this->advV0AdvertGetRequest($id);
 
         try {
@@ -168,7 +168,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20041',
+                        '\Wildberries\Client\Model\InlineResponse20032',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -210,7 +210,7 @@ class DefaultApi
      */
     public function advV0AdvertGetAsyncWithHttpInfo($id)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20041';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20032';
         $request = $this->advV0AdvertGetRequest($id);
 
         return $this->client
@@ -363,7 +363,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20040[]
+     * @return \Wildberries\Client\Model\InlineResponse20031[]
      */
     public function advV0AdvertsGet($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null)
     {
@@ -385,11 +385,11 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20040[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20031[], HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0AdvertsGetWithHttpInfo($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20040[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20031[]';
         $request = $this->advV0AdvertsGetRequest($status, $type, $limit, $offset, $order, $direction);
 
         try {
@@ -441,7 +441,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20040[]',
+                        '\Wildberries\Client\Model\InlineResponse20031[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -493,7 +493,7 @@ class DefaultApi
      */
     public function advV0AdvertsGetAsyncWithHttpInfo($status = null, $type = null, $limit = null, $offset = null, $order = null, $direction = null)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20040[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20031[]';
         $request = $this->advV0AdvertsGetRequest($status, $type, $limit, $offset, $order, $direction);
 
         return $this->client
@@ -659,7 +659,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20039
+     * @return \Wildberries\Client\Model\InlineResponse20030
      */
     public function advV0CountGet()
     {
@@ -675,11 +675,11 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20039, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20030, HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0CountGetWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20039';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20030';
         $request = $this->advV0CountGetRequest();
 
         try {
@@ -731,7 +731,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20039',
+                        '\Wildberries\Client\Model\InlineResponse20030',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -771,7 +771,7 @@ class DefaultApi
      */
     public function advV0CountGetAsyncWithHttpInfo()
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20039';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20030';
         $request = $this->advV0CountGetRequest();
 
         return $this->client
@@ -909,7 +909,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Client\Model\InlineResponse20042[]
+     * @return \Wildberries\Client\Model\InlineResponse20033[]
      */
     public function advV0CpmGet($type, $param)
     {
@@ -927,11 +927,11 @@ class DefaultApi
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Client\Model\InlineResponse20042[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Client\Model\InlineResponse20033[], HTTP status code, HTTP response headers (array of strings)
      */
     public function advV0CpmGetWithHttpInfo($type, $param)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20042[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20033[]';
         $request = $this->advV0CpmGetRequest($type, $param);
 
         try {
@@ -983,7 +983,7 @@ class DefaultApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Client\Model\InlineResponse20042[]',
+                        '\Wildberries\Client\Model\InlineResponse20033[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1027,7 +1027,7 @@ class DefaultApi
      */
     public function advV0CpmGetAsyncWithHttpInfo($type, $param)
     {
-        $returnType = '\Wildberries\Client\Model\InlineResponse20042[]';
+        $returnType = '\Wildberries\Client\Model\InlineResponse20033[]';
         $request = $this->advV0CpmGetRequest($type, $param);
 
         return $this->client
@@ -1795,6 +1795,767 @@ class DefaultApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiV1DelPost
+     *
+     * Удаление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1DelBody[] $body body (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiV1DelPost($body)
+    {
+        $this->apiV1DelPostWithHttpInfo($body);
+    }
+
+    /**
+     * Operation apiV1DelPostWithHttpInfo
+     *
+     * Удаление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1DelBody[] $body (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiV1DelPostWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiV1DelPostRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiV1DelPostAsync
+     *
+     * Удаление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1DelBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1DelPostAsync($body)
+    {
+        return $this->apiV1DelPostAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiV1DelPostAsyncWithHttpInfo
+     *
+     * Удаление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1DelBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1DelPostAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiV1DelPostRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiV1DelPost'
+     *
+     * @param  \Wildberries\Client\Model\V1DelBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiV1DelPostRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling apiV1DelPost'
+            );
+        }
+
+        $resourcePath = '/api/v1/del';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiV1InsPost
+     *
+     * Добавление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1InsBody[] $body body (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiV1InsPost($body)
+    {
+        $this->apiV1InsPostWithHttpInfo($body);
+    }
+
+    /**
+     * Operation apiV1InsPostWithHttpInfo
+     *
+     * Добавление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1InsBody[] $body (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiV1InsPostWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiV1InsPostRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiV1InsPostAsync
+     *
+     * Добавление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1InsBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1InsPostAsync($body)
+    {
+        return $this->apiV1InsPostAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiV1InsPostAsyncWithHttpInfo
+     *
+     * Добавление рекомендаций
+     *
+     * @param  \Wildberries\Client\Model\V1InsBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1InsPostAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiV1InsPostRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiV1InsPost'
+     *
+     * @param  \Wildberries\Client\Model\V1InsBody[] $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiV1InsPostRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling apiV1InsPost'
+            );
+        }
+
+        $resourcePath = '/api/v1/ins';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiV1SupGet
+     *
+     * Получение списка рекомендаций
+     *
+     * @param  int $nm Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return int[]
+     */
+    public function apiV1SupGet($nm)
+    {
+        list($response) = $this->apiV1SupGetWithHttpInfo($nm);
+        return $response;
+    }
+
+    /**
+     * Operation apiV1SupGetWithHttpInfo
+     *
+     * Получение списка рекомендаций
+     *
+     * @param  int $nm Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. (required)
+     *
+     * @throws \Wildberries\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of int[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiV1SupGetWithHttpInfo($nm)
+    {
+        $returnType = 'int[]';
+        $request = $this->apiV1SupGetRequest($nm);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'int[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiV1SupGetAsync
+     *
+     * Получение списка рекомендаций
+     *
+     * @param  int $nm Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1SupGetAsync($nm)
+    {
+        return $this->apiV1SupGetAsyncWithHttpInfo($nm)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiV1SupGetAsyncWithHttpInfo
+     *
+     * Получение списка рекомендаций
+     *
+     * @param  int $nm Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiV1SupGetAsyncWithHttpInfo($nm)
+    {
+        $returnType = 'int[]';
+        $request = $this->apiV1SupGetRequest($nm);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiV1SupGet'
+     *
+     * @param  int $nm Идентификатор товара (&#x60;nmId&#x60;), по которому необходимо получить список рекомендаций. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiV1SupGetRequest($nm)
+    {
+        // verify the required parameter 'nm' is set
+        if ($nm === null || (is_array($nm) && count($nm) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $nm when calling apiV1SupGet'
+            );
+        }
+
+        $resourcePath = '/api/v1/sup';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($nm !== null) {
+            $queryParams['nm'] = ObjectSerializer::toQueryValue($nm, null);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
                 []
             );
         }
@@ -2659,7 +3420,7 @@ class DefaultApi
      *
      * @param  string $date_from Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; (required)
      * @param  \DateTime $date_to Конечная дата отчета (required)
-     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. (optional, default to 0)
+     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. (optional, default to 0)
      * @param  int $rrdid Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
@@ -2679,7 +3440,7 @@ class DefaultApi
      *
      * @param  string $date_from Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; (required)
      * @param  \DateTime $date_to Конечная дата отчета (required)
-     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. (optional, default to 0)
+     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. (optional, default to 0)
      * @param  int $rrdid Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. (optional)
      *
      * @throws \Wildberries\Client\ApiException on non-2xx response
@@ -2757,7 +3518,7 @@ class DefaultApi
      *
      * @param  string $date_from Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; (required)
      * @param  \DateTime $date_to Конечная дата отчета (required)
-     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. (optional, default to 0)
+     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. (optional, default to 0)
      * @param  int $rrdid Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2780,7 +3541,7 @@ class DefaultApi
      *
      * @param  string $date_from Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; (required)
      * @param  \DateTime $date_to Конечная дата отчета (required)
-     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. (optional, default to 0)
+     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. (optional, default to 0)
      * @param  int $rrdid Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2833,7 +3594,7 @@ class DefaultApi
      *
      * @param  string $date_from Дата в формате RFC3339. Можно передать дату или дату со временем.  Время можно указывать с точностью до секунд или миллисекунд.  Литера &#x60;Z&#x60; в конце строки означает, что время передается в UTC-часовом поясе.  При ее отсутствии время считается в часовом поясе МСК (UTC+3). &lt;br&gt;Примеры: &lt;ul&gt; &lt;li&gt; &#x60;2019-06-20&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00Z&#x60; &lt;li&gt; &#x60;2019-06-20T23:59:59&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345Z&#x60; &lt;li&gt; &#x60;2019-06-20T00:00:00.12345&#x60; &lt;li&gt; &#x60;2017-03-25T00:00:00&#x60; &lt;/ul&gt; (required)
      * @param  \DateTime $date_to Конечная дата отчета (required)
-     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100 000. (optional, default to 0)
+     * @param  int $limit Максимальное количество строк отчета, возвращаемых методом. Не может быть более 100000. (optional, default to 0)
      * @param  int $rrdid Уникальный идентификатор строки отчета. Необходим для получения отчета частями.  &lt;br&gt; Загрузку отчета нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова.  &lt;br&gt; Таким образом для загрузки одного отчета может понадобиться вызывать API до тех пор, пока количество возвращаемых строк не станет равным нулю. (optional)
      *
      * @throws \InvalidArgumentException

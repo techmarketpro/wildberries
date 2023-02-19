@@ -3,10 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | **bool** |  | [optional] 
-**error_text** | **string** |  | [optional] 
-**additional_errors** | **object[]** |  | [optional] 
-**data** | [**\Wildberries\Client\Model\InlineResponse20024Data**](InlineResponse20024Data.md) |  | [optional] 
+**orders** | [**\Wildberries\Client\Model\InlineResponse20024Orders[]**](InlineResponse20024Orders.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

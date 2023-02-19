@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**supplies** | [**\Wildberries\Client\Model\InlineResponse20020Supplies[]**](InlineResponse20020Supplies.md) |  | [optional] 
+**id** | **int** | ID склада. | [optional] 
+**name** | **string** | Наименование склада. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
